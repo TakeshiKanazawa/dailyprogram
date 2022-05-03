@@ -9,13 +9,16 @@ public class main {
 	public static void main(String[] args) {
 	//入力
 		Scanner sc = new Scanner(System.in);
+		//N枚のカード
 		int N = sc.nextInt();
+		//配列の0番目は使用しない為「N + 1」で配列を宣言
 		int[] A = new int[N + 1];
 		for (int i = 1; i < A.length; i++) {
 			A[i] = sc.nextInt();
 		}
-		
 		//5つのカードの番号(i,j,k,l,m)を全探索
+		//for文は内側のループから抜けていく。●● <= Nを満たさなくなった場合ループを抜ける
+		//上記を利用して全パターンを網羅できる
 		int answer = 0;
 		for (int i = 1; i <= N; i++) {
 			for (int j = i + 1; j <= N; j++) {
@@ -28,7 +31,7 @@ public class main {
 						}
 					}
 				}
-			}	
+			}
 		}
 		System.out.println(answer);
 	}
