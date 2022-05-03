@@ -23,6 +23,6 @@ public class main {
 		for(int i = 1; i <= n - r; i++) fact_nr *= i;
 		
 		//出力
-		System.out.println(fact_n / (fact_r) * fact_nr);
+		System.out.println(fact_n / (fact_r * fact_nr));
 	}
 }
