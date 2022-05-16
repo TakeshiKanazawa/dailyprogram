@@ -16,9 +16,7 @@ public class Main {
 		//Scanner は行が続く場合は hasNext() が true を返す
 		while(sc.hasNext()) {
 			array.add(sc.nextInt());
-			if(!sc.hasNext()) {
-				break;
-			}
+			
 		}
 
 			for (int i = 0; i < array.size(); i++) {
