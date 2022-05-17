@@ -1,6 +1,5 @@
 package Day20;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 //１つの整数 x を読み込み、それをそのまま出力するプログラムを作成して下さい。
@@ -12,18 +11,15 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		List<Integer> array = new ArrayList<>();
-		//Scanner は行が続く場合は hasNext() が true を返す
-		while(sc.hasNext()) {
-			array.add(sc.nextInt());
-			
-		}
-
-			for (int i = 0; i < array.size(); i++) {
-				int test = i + 1;
-
-			System.out.println("Case" +  test + ": " + array.get(i));
-
+		int number = 1;
+		while(true) {
+			int x  =sc.nextInt();
+			if(x != 0) {
+			System.out.println("Case " +  number + ": " + x);
+			number++;
+			}else {
+				break;
+			}
 		}
 	}
 }
