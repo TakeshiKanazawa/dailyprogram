@@ -38,6 +38,7 @@ public class Main2 {
 		System.out.print(numberlist.stream().min(Comparator.naturalOrder()).get()+" ");
 		System.out.print(numberlist.stream().max(Comparator.naturalOrder()).get()+" ");
 		//System.out.println(max);
+		
 		System.out.println(sum);
 	}
 }
