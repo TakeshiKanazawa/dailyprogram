@@ -16,18 +16,28 @@ public class Main {
 //		1行目にnとmが空白区切りで与えられます
 		int n = sc.nextInt();
 		int m = sc.nextInt();
-		// 多次元配列
-		 int[][]elementArray = new int[n][m];
+		// 行列A
+		 int[][]matrixArray = new int[n][m];
+		// ベクトルb
+		 int[]vectorArray = new int[m];
 //		続くn行に行列Aの要素aijが空白区切りで与えられます。
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m; j++) {
-				
-				elementArray[i][j] = sc.nextInt();
+				matrixArray[i][j] = sc.nextInt();
 			}
-			
 		}
 //		続くm行にベクトルbの要素biがそれぞれ1行に与えられます。
-		
+		for (int i = 0; i < m; i++) {
+			vectorArray[i] =  sc.nextInt();
+		}
+		int sum;
+		for (int i = 0; i < n ; i++) {
+			sum = 0;
+			for (int j = 0; j < m ; j++) {
+				sum += matrixArray[i][j] * vectorArray[j];
+			}
+			System.out.println(sum);
+		}
 		//■Output
 		/* 出力はn行からなります。ベクトルcの要素ciをそれぞれ1行に出力してください。 */
 	}
