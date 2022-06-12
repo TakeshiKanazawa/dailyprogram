@@ -24,8 +24,8 @@ public class Main {
 		
 		//2次元配列に入力値を記録
 		 int[][]elementArray = new int[101][101];//合計値が入るので+1
-		for (int i = 0; i < c; i++) {
-			for (int j = 0; j < r; j++) {
+		for (int i = 0; i < r; i++) {
+			for (int j = 0; j < c; j++) {
 				//行、列 の要素の入力
 				int	c_element = sc.nextInt();
 				elementArray[i][j] = c_element;
@@ -35,22 +35,24 @@ public class Main {
 		int rSum = 0;//行の合計
 		int cSum = 0;//列の合計
 		
-		for (int i = 0; i < c; i++) {
-			for (int j = 0; j < r; j++) {
+		for (int i = 0; i < r; i++) {
+			for (int j = 0; j < c; j++) {
 				//*行の要素を出力
 				System.out.print(elementArray[i][j]+" ");
 				rSum += elementArray[i][j];//行の合計に加算
-				cSum += elementArray[j][i];//行の合計に加算
-					//cSum += elementArray[i][c+1] = ;
-
+				//縦行の値..c+1の二次元配列の要素に加算していく
+				elementArray[100][j] +=  elementArray[i][j];
+				//elementArray[i][r+1] =  rSum;
 			}
 			//行の合計値を出力
 			System.out.println(rSum);
-			//列の合計値を出力
-			System.out.println(cSum);
 			rSum = 0;
-			cSum = 0;
 		}
-		//*列の合計を出力
+		for (int i = 0; i < c; i++) {
+			System.out.print(elementArray[100][i]+ " ");
+			cSum+= elementArray[100][i];
+		}
+		//列の合計値を出力
+		System.out.println(cSum);
 	}
 }
