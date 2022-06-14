@@ -14,6 +14,18 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String text = sc.next();//
+		String text = sc.nextLine();
+		for (int i = 0; i < text.length(); i++) {// 文字列の長さ分繰り返す
+			char ch = text.charAt(i);
+			if (Character.isAlphabetic(ch)) {//アルファベットの場合
+				if (Character.isLowerCase(ch))
+					System.out.print(Character.toUpperCase(ch));//小文字→大文字
+				if (Character.isUpperCase(ch))
+					System.out.print(Character.toLowerCase(ch));//大文字→小文字
+			} else {
+				System.out.print(ch);//アルファベット以外
+			}
+		}
+		System.out.println();
 	}
 }
