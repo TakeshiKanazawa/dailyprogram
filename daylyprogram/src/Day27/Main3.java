@@ -22,7 +22,7 @@ public class Main3 {
 		int n = SC.nextInt();// 数列の長さ
 		int[] num = new int[n];
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 1; i < n; i++) {
 			int ai = SC.nextInt();// i番目の数
 			num[i] = ai;// 配列i番目にaiを格納
 		}
