@@ -1,6 +1,5 @@
 package Day36;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 // 与えられた数の各桁の和を計算するプログラムを作成して下さい。
@@ -11,15 +10,16 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-        String x;
-        Scanner sc = new Scanner(System.in);
-        while(true){   
-            x = sc.next();
-            if ( x.equals("0") ) break;
-            int sum = 0;
-            for ( int i = 0; i < x.length(); i++ )
-                sum += x.charAt(i) - '0';
-            System.out.println(sum);
-}
+		String x;
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			x = sc.next();
+			if (x.equals("0"))
+				break;
+			int sum = 0;
+			for (int i = 0; i < x.length(); i++)
+				sum += x.charAt(i) - '0';
+			System.out.println(sum);
+		}
 	}
 }
