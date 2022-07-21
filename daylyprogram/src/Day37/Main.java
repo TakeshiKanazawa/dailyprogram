@@ -15,22 +15,18 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		//サイズが 26 である整数型の配列を宣言
+		//サイズが 26 である整数型の配列を宣言(アルファベットA-Zを数字にすると25)
 		int[] counter = new int[26];
-
-		//入力
+		
 		while(sc.hasNext()) { //入力が存在する間
-	//		String line = sc.nextLine();//データを1行読み込む
-			//読み込んだ文字列に対する処理
-			String str = sc.next().toLowerCase();
+			String str = sc.next().toLowerCase();// 入力文字を小文字に変換して格納
 			for (int i = 0; i < str.length(); i++) {
-				//文字列を小文字に変換
-						//大文字、空白、記号
 				int num = str.charAt(i) - 'a'; // 文字列line のi番目の文字を番号(数字)に変換
-				if(num > 26 || num < 0) {
-					break;
+				if(num > 26 || num < 0) {//変換した文字の数字がアルファベットじゃない場合(1-25以外の数字)
+					//ループ処理を戻す(何もしない)
+					continue;
 				}
-				//該当の配列カウンタを加算
+				//該当のアルファベットの配列カウンタを加算
 				counter[num]++;
 			}
 		}
