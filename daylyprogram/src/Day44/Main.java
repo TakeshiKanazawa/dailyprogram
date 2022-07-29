@@ -33,24 +33,24 @@ public class Main {
 		// ユークリッド距離(p = 2のとき)
 		for (int i = 0; i < n; i++) {
 			// 絶対値を2乗した値の合計値
-			//p2 += Math.pow(Math.abs(x[i])-y[i], 2);
-			p2 += (x[i] - y[i]) * (x[i] - y[i]);
-			
-			// 平方根にして格納
-			p2 = Math.sqrt(p2);
+			p2 += Math.pow(Math.abs(x[i])-y[i], 2);
 		}
+		// 平方根にして格納
+		p2 = Math.sqrt(p2);
 
 		// ユークリッド距離(p = 3のとき)
 		for (int i = 0; i < n; i++) {
 			// 絶対値を3乗した値の合計値
-			p3 += Math.pow(Math.abs(x[i])-y[i], 3);
-			// 立方根にして格納
-			p3 = Math.cbrt(p3);
+		//	p3 += Math.pow(Math.abs(x[i])-y[i], (double)3);
+			p3 += Math.abs((x[i] - y[i]) * (x[i] - y[i]) * (x[i] - y[i]));
 		}
+		// 立方根にして格納
+		p3 = Math.cbrt(p3);
 		// チェビシフ距離(p = ∞)
 		for (int i = 0; i < n; i++) {
 			// 絶対値を3乗した値の合計値
-			pInfinity = Math.max(0, Math.abs(x[i]) - y[i]);
+//			pInfinity = Math.max(0, Math.abs(x[i]) - y[i]);
+			pInfinity = Math.max(pInfinity, Math.abs(x[i] - y[i]));
 		}
 
 		System.out.println(String.format("%.8f", p1));
