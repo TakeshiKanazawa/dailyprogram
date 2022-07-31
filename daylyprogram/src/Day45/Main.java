@@ -4,12 +4,17 @@ import java.util.Scanner;
 
 //サイコロのクラス
 class Dice {
+	double[] s;
 	
 	// コンストラクタ
+	public Dice(double[] s) {
+		this.s = s;
+	}
 	
-	// サイコロを転がす
+	// サイコロを転がす(N方向)
 	void move() {
-		
+		double tmp = this.s[0];
+		this.s[0] = this.s[1];
 	}
 	
 	// サイコロの上面の数を出力
@@ -20,6 +25,11 @@ class Dice {
 }
 
 //サイコロ I
+//■考察
+// 求めたいのは頂点(上面)の数
+//サイコロをn方向に動かした時点の数を都度保持しておき、最終的に出力させれば解くことは可能
+//例えば[1]が頂点のとき、Wがにゅうりょくされたら4 Eなら3など
+
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
