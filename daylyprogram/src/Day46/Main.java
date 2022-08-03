@@ -1,5 +1,7 @@
 package Day46;
 
+import java.util.Scanner;
+
 //サイコロのクラス
 // ①東西南北(E、N、S、W)に動かすメソッド(ifで分岐させる)
 // ②サイコロの上面を出力するメソッド
@@ -71,5 +73,40 @@ class Dice {
 //例えば[1]が頂点のとき、Wがにゅうりょくされたら4 Eなら3など
 
 public class Main {
-	public static void main(String[] args) {}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		// サイコロの各面を格納する配列を宣言(賽の目と合わせるために+１する)
+		int[] diceArray = new int[7];
+		// １行目に各面の整数が、図に示すラベルの順番に空白区切りで与えられます。
+		for (int i = 0; i < diceArray.length; i++) {
+			diceArray[i+1] = sc.nextInt();
+		}
+		
+		// ２行目に質問の数qが与えられます。
+		int questionCount = sc.nextInt();
+		
+		for (int i = 0; i < questionCount; i++) {
+			int topSurface = sc.nextInt();
+			int frontSurface = sc.nextInt();
+			
+		}
+		//		// 文字列を取得
+//		String moveOrder = sc.next();
+//		// １文字ずつ格納する配列
+//		String[] strArray = new String[moveOrder.length()];
+//
+//		// 変数moveOrderの文字列ぶん回す
+//		for (int i = 0; i < moveOrder.length(); i++) {
+//			// strの先頭から1文字ずつString型にして取り出す
+//			// 配列に順番に格納する
+//			strArray[i] = String.valueOf(moveOrder.charAt(i));
+//		}
+
+		// Diceクラスをインスタンス化
+		Dice dice = new Dice(diceArray);
+		//dice.move(strArray);
+		// 解答を出力
+		dice.print();
+	}
 }
