@@ -10,6 +10,7 @@ class Dice {
 	int[] diceArray;
 	int tmp;
 
+	
 	// コンストラクタ
 	public Dice(int[] dice) {
 		this.diceArray = dice;
