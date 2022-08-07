@@ -90,7 +90,6 @@ public class Main {
 		for (int i = 0; i < questionCount; i++) {
 			int topSurface = sc.nextInt();
 			int frontSurface = sc.nextInt();
-			
 		}
 		//		// 文字列を取得
 //		String moveOrder = sc.next();
