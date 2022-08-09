@@ -34,30 +34,35 @@ public class Main {
 			for (int j = 0; j < measureCount; j++) {
 				scoreArray[i][j] = sc.nextInt();
 				scoreArray[i][j] -= HZArray[j];
-				if ((scoreArray[i][j] > 0 && scoreArray[i][j] >= 5)
+				if ((scoreArray[i][j] > 0 && scoreArray[i][j] <= 5)
 						|| (scoreArray[i][j] < 0 && scoreArray[i][j] <= -5)) {
 					// 何もしない
 				}
-				if ((scoreArray[i][j] > 0 && scoreArray[i][j] >= 10)
-						|| (scoreArray[i][j] < 0 && scoreArray[i][j] <= -10)) {
+				if ((scoreArray[i][j] > 0 && scoreArray[i][j] <= 10)
+						|| (scoreArray[i][j] < 0 && scoreArray[i][j] >= -10)) {
 					score -= 1;
-				} else if ((scoreArray[i][j] > 0 && scoreArray[i][j] >= 10)
-						|| (scoreArray[i][j] < 0 && scoreArray[i][j] <= -20)) {
+					continue;
+				} else if ((scoreArray[i][j] > 0 && scoreArray[i][j] <= 20)
+						|| (scoreArray[i][j] < 0 && scoreArray[i][j] >= -20)) {
 					score -= 2;
-				} else if ((scoreArray[i][j] > 0 && scoreArray[i][j] >= 30)
-						|| (scoreArray[i][j] < 0 && scoreArray[i][j] <= -30)) {
+					continue;
+				} else if ((scoreArray[i][j] > 0 && scoreArray[i][j] <= 30)
+						|| (scoreArray[i][j] < 0 && scoreArray[i][j] >= -30)) {
 					score -= 3;
-				} else {
+					continue;
+				} else if ((scoreArray[i][j] > 0 && scoreArray[i][j] >= 31)
+						|| (scoreArray[i][j] < 0 && scoreArray[i][j] <= -31)) {
 					score -= 5;
 				}
 			}
+			// 最大スコアと比較して、大きい方を最大スコアとする
+			if (score > maxScore)
+			{
+				maxScore = score;
+			}
 		}
 
-		// 最大スコアと比較して、大きい方を最大スコアとする
-		if (score > maxScore)
-		{
-			maxScore = score;
-		}
+
 
 // 解答出力
 		System.out.println(maxScore);
