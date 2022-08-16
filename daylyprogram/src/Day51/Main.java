@@ -13,17 +13,14 @@ public class Main {
 		// N個の整数
 		for (int i = 0; i < N; i++) {
 			int seisu = sc.nextInt();
-			if (isEven(seisu)) {
-				boolean w = isWareru(seisu);
-				if (w) {
+			if (isEven(seisu) && !isWareru(seisu)) {
+				Ans = "DENIED";
+				System.out.println(Ans);
+				return;
+				} else  {
 					Ans = "APPROVED";
-				} else if (!w) {
-					Ans = "DENIED";
-					System.out.println(Ans);
-					return;
 				}
 			}
-		}
 		System.out.println(Ans);
 	}
 
