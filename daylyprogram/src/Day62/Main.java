@@ -12,7 +12,7 @@ public class Main {
 		int cnt = 0;
 
 		//ループ変数iは初期値1にする
-		for (int i = 1; i < N; i++) {
+		for (int i = 1; i <= N; i++) {
 			int tmp = i;
 			int tmpCnt = 0;
 			while (true) {
@@ -21,13 +21,16 @@ public class Main {
 					//whileループを抜けて26行目に処理を移動
 					break;
 				}
+				//2で割れる回数のカウントUp
 				tmpCnt++;
 			}
+			//現在までカウント数と、ループのカウント数を比較、値に応じて最大値maxとカウントを更新
 			if (tmpCnt > cnt) {
 				cnt = tmpCnt;
 				max = i;
 			}
 		}
+		//解答出力
 		System.out.println(max);
 	}
 }
